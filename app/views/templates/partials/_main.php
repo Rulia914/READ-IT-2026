@@ -200,7 +200,7 @@
           </div>
 
           <!-- .col-md-8 sidebar-->
-          <?php include_once './partials/_aside.php';?>
+          <?php include '../app/views/templates/partials/_aside.php';?>
 
         </div>
       </div>

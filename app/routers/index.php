@@ -1,9 +1,9 @@
 <?php
 //Route par défaut : les dix derniers posts
-//PATTERN : 
+//PATTERN : /
 //URL : ?
 //CTRL : postsController
-//ACTION : index
+//ACTION : indexAction
 
 include_once '../app/controllers/postsController.php';
-\App\Controllers\PostsController\index($connexion);
+\App\Controllers\PostsController\indexAction($connexion);

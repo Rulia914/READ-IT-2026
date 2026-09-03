@@ -2,11 +2,11 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 ftco-animate">
-            <?php $content;?>
+            <?php echo $content; ?>
           </div>
 
           <!-- .col-md-8 sidebar-->
-          <?php include '../app/views/templates/partials/_aside.php';?>
+          <?php include '../app/views/templates/partials/_aside.php'; ?>
 
         </div>
       </div>

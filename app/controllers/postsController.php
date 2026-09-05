@@ -23,6 +23,9 @@ function showAction(PDO $connexion, int $id)
     include_once '../app/models/postsModel.php';
     $post = PostsModel\findOneById($connexion, $id); 
 
+    include_once '../app/models/authorsModel.php';
+    $author = \App\Models\AuthorsModel\findOneById($connexion, $post['author_id']); 
+
     global $title, $content;
     $title = $post['title'];    
 

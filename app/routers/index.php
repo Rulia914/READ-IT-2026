@@ -6,7 +6,7 @@
 //ACTION : showAction
 if(isset($_GET['postId']) ):
     include_once '../app/controllers/postsController.php';
-    \App\Controllers\PostsController\showAction($connexion, $_GET['postId']);
+    App\Controllers\PostsController\showAction($connexion, $_GET['postId']);
 
 //Route par défaut : les dix derniers posts
 //PATTERN : /

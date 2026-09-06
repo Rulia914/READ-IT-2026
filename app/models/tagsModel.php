@@ -6,10 +6,11 @@ use \PDO;
 
 function findAll(PDO $connexion) : array
 {
-    $sql = "SELECT *
-            FROM tags
-            ORDER BY RAND() 
-            LIMIT 8;";
+    $sql = "SELECT *, COUNT(pht.post_id) AS post_count
+            FROM tags t
+            LEFT JOIN posts_has_tags pht ON pht.tag_id = t.id
+            group BY t.id
+            ORDER BY COUNT(pht.post_id) ASC ;";
 
     $rs = $connexion->query($sql);
     return $rs->fetchAll(PDO::FETCH_ASSOC);

@@ -13,14 +13,23 @@
               </form>
             </div>
             <div class="sidebar-box ftco-animate">
-            <?php include '../app/views/templates/categories/_index.php'; ?>
+            <?php 
+             include_once '../app/models/categoriesModel.php';
+             $categories = \App\Models\CategoriesModel\findAll($connexion);
+             include '../app/views/templates/categories/_index.php'; ?>
             </div>
             <div class="sidebar-box ftco-animate">
-              <?php include '../app/views/templates/posts/recentsPosts.php'; ?>
+              <?php 
+              include_once '../app/models/postsModel.php';
+              $posts = \App\Models\PostsModel\findAllRecents($connexion);
+              include '../app/views/templates/posts/index_recent.php'; ?>
             </div>
 
             <div class="sidebar-box ftco-animate">
-              <?php include '../app/views/templates/tags/_index.php'; ?>
+              <?php 
+              include_once '../app/models/tagsModel.php';
+              $tags = \App\Models\TagsModel\findAll($connexion);
+              include '../app/views/templates/tags/index.php'; ?>
             </div>
 
           </div>

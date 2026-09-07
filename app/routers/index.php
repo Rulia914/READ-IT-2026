@@ -1,12 +1,12 @@
 <?php
 
-//DETAIL D'UN POSTE
-//PATTERN : ?postID=x
+//DETAIL POST.show
+//PATTERN : /posts/id/slug
+//URL : ?posts=show&id=x
 //CTRL : postsController
 //ACTION : showAction
-if(isset($_GET['postId']) ):
-    include_once '../app/controllers/postsController.php';
-    App\Controllers\PostsController\showAction($connexion, $_GET['postId']);
+if(isset($_GET['posts']) ):
+    include_once '../app/routers/posts.php';
 
 //Route par défaut : les dix derniers posts
 //PATTERN : /

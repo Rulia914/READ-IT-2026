@@ -4,11 +4,11 @@
 ?>   
             
             <p class="mb-5">
-              <img src="images/<?php echo $post['image'];?>" alt="" class="img-fluid">
+              <img src="images/<?php echo $post['image'];?>" alt="<?php echo $post['title'];?>" class="img-fluid">
             </p>
 
             <h1 class="mb-3 h1"><?php echo $post['title'];?></h1>
-            <p><?php echo $post['content'];?></p>
+            <div><?php echo $post['content'];?></div>
             
         <!--tags list-->
 
@@ -25,14 +25,14 @@
             ?>
 
         <!--Comments section--> 
-        <?php
-            include_once '../app/controllers/commentsController.php';
-            App\Controllers\CommentsController\indexByPostIdAction($connexion, $post['id']);
-        ?>
+            <?php
+                include_once '../app/controllers/commentsController.php';
+                App\Controllers\CommentsController\indexByPostIdAction($connexion, $post['id']);
+            ?>
 
               <!-- END comment-list -->
               <!-- FORMULAIRE -->
-              <?php include '../app/views/templates/comments/_addForm.php'; ?>
+            <?php include '../app/views/templates/comments/_addForm.php'; ?>
 
 
          

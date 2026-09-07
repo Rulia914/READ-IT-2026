@@ -8,7 +8,7 @@ function indexAction(PDO $connexion)
 {
     include_once '../app/models/postsModel.php';
     $posts = PostsModel\findAll($connexion);
-    $recentsPosts = \App\Models\PostsModel\findAllByDate($connexion);
+    $recentsPosts = PostsModel\findAllByDate($connexion);
 
     global $title, $content;
     $title = 'Blog';

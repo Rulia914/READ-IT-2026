@@ -4,12 +4,11 @@
           <div class="col-lg-8 ftco-animate">
             <div class="container"> 
             <?php echo $content; ?>
+            </div>
           </div>
 
           <!-- .col-md-8 sidebar-->
           <?php include '../app/views/templates/partials/_aside.php'; ?>
-
         </div>
       </div>
-      </div>
-    </section> <!-- .section -->
+</section> <!-- .section -->

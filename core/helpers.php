@@ -13,3 +13,14 @@ function truncate( string $string, int $lg_max=50) :string {
         return $string; 
     }
 }
+function dateFormator(string $date, string $format = "d/m/Y") : string{
+    return date($format, strtotime($date));
+}
+
+function slugify(string $string): string{
+    $string = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $string);    
+    $string = strtolower($string);
+    $string = preg_replace('/[^a-z0-9]+/', '-', $string);
+    $string = trim($string, '-');
+    return $string;
+}

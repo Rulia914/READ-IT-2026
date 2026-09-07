@@ -1,5 +1,6 @@
 <?php
 /** @var array $posts */
+/** @var array $date */
 ?>
 
 
@@ -7,25 +8,25 @@
   <div class="row d-flex">
   <!--liste des posts-->
   <?php foreach ($posts as $post) : 
-    $date = strtotime($post['created_at']);
+
   ?>
     <div class="col-md-6 d-flex ftco-animate">
       <div class="blog-entry justify-content-end">
-        <a href="?postId=<?php echo $post['id']; ?>" class="block-20" style="background-image: url('images/<?php echo $post['image']; ?>');">
+        <a href="posts/<?php echo $post["id"];?>/<?php echo \Core\Helpers\slugify ($post["title"]);?>" class="block-20" style="background-image: url('images/<?php echo $post['image']; ?>');">
         </a>
         <div class="text p-4 float-right d-block">
           <div class="topper d-flex align-items-center">
             <div class="one py-2 pl-3 pr-1 align-self-stretch">
-              <span class="day"><?php echo date('d', $date); ?></span>
+              <span class="day"><?php echo \Core\Helpers\dateFormator($post['created_at'], 'd'); ?></span>
             </div>
             <div class="two pl-0 pr-3 py-2 align-self-stretch">
-              <span class="yr"><?php echo date('Y', $date); ?></span>
-              <span class="mos"><?php echo date('M', $date); ?></span>
+              <span class="yr"><?php echo \Core\Helpers\dateFormator($post['created_at'], 'Y'); ?></span>
+              <span class="mos"><?php echo \Core\Helpers\dateFormator($post['created_at'], 'M'); ?></span>
             </div>
           </div>
-          <h3 class="heading mb-3"><a href="?postId=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h3>
+          <h3 class="heading mb-3"><a href="posts/<?php echo $post["id"];?>/<?php echo \Core\Helpers\slugify ($post["title"]);?>"><?php echo $post['title']; ?></a></h3>
           <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-          <p><a href="?postId=<?php echo $post['id']; ?>" class="btn-custom"><span class="ion-ios-arrow-round-forward mr-3"></span>Read more</a></p>
+          <p><a href="posts/<?php echo $post["id"];?>/<?php echo \Core\Helpers\slugify ($post["title"]);?>" class="btn-custom"><span class="ion-ios-arrow-round-forward mr-3"></span>Read more</a></p>
         </div>
       </div>
     </div>

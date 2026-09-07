@@ -4,7 +4,7 @@ namespace App\Models\PostsModel;
 
 use \PDO;
 
-function findAll(PDO $connexion) : array
+function findAll(PDO $connexion, int $limit = 10) : array
 {
     $sql = "SELECT 
                 p.id,
@@ -18,11 +18,14 @@ function findAll(PDO $connexion) : array
             FROM posts p
             INNER JOIN authors a ON p.author_id = a.id
             ORDER BY p.created_at DESC
-            LIMIT 10;";
+            LIMIT :limit;";
 
-    $rs = $connexion->query($sql);
-    return $rs->fetchAll(PDO::FETCH_ASSOC);
-}
+        $rs = $connexion->prepare($sql);
+        $rs->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $rs->execute();
+        return $rs->fetchAll(PDO::FETCH_ASSOC);
+} 
+//De cette façon, on peut récupérer les 10 derniers articles publiés, mais on peut aussi récupérer les 5 derniers articles en appelant la fonction avec un paramètre de limite différent.
 
 function findAllByDate(PDO $connexion) : array
 {

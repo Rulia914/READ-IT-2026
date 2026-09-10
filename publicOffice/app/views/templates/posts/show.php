@@ -32,7 +32,7 @@
 
               <!-- END comment-list -->
               <!-- FORMULAIRE -->
-            <?php include '../app/views/templates/comments/_addForm.php'; ?>
+            
 
 
          

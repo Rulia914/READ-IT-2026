@@ -1,10 +1,19 @@
 <?php
+//AJOUT D'UN COMMENT
+//PATTERN : ?comments=add
+//URL : 
+//CTRL : commentsController
+//ACTION : store
+if(isset($_GET['comments']) && $_GET['comments'] == 'add'):
+    include_once '../app/controllers/commentsController.php';
+    \App\Controllers\CommentsController\storeAction($connexion);
+
 //PAGE CONTACT
 //PATTERN : ?contact
 //URL : 
 //CTRL : 
 //ACTION : 
-if(isset($_GET['contact']) ):
+elseif(isset($_GET['contact']) ):
     $title = "Contact";
     ob_start();
     include_once '../app/views/templates/partials/_contact.php';

@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <?php include "../app/views/templates/partials/_head.php"; ?>
-</head>
-<body>
-    <?php include "../app/views/templates/partials/_nav.php"; ?>
-    <?php include "../app/views/templates/partials/_hero.php"; ?>
-    
-    <?php include "../app/views/templates/partials/_main.php"; ?>
-    <?php include "../app/views/templates/partials/_footer.php"; ?>
- 
-    <?php include "../app/views/templates/partials/_loader.php"; ?>
-    <?php include "../app/views/templates/partials/_script.php"; ?>
-</body>
+<html lang="en">
+  <?php include '../app/views/templates/partials/_head.php';?>
+
+  <body>
+    <!-- Fixed navbar -->
+    <?php include '../app/views/templates/partials/_nav.php';?>
+
+    <?php include '../app/views/templates/partials/_main.php';?>
+
+    <?php include '../app/views/templates/partials/_script.php';?>
+  </body>
 </html>

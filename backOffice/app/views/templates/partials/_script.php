@@ -1,15 +1,15 @@
-  <script src="../documents/template/js/jquery.min.js"></script>
-  <script src="../documents/template/js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="../documents/template/js/popper.min.js"></script>
-  <script src="../documents/template/js/bootstrap.min.js"></script>
-  <script src="../documents/template/js/jquery.easing.1.3.js"></script>
-  <script src="../documents/template/js/jquery.waypoints.min.js"></script>
-  <script src="../documents/template/js/jquery.stellar.min.js"></script>
-  <script src="../documents/template/js/owl.carousel.min.js"></script>
-  <script src="../documents/template/js/jquery.magnific-popup.min.js"></script>
-  <script src="../documents/template/js/aos.js"></script>
-  <script src="../documents/template/js/jquery.animateNumber.min.js"></script>
-  <script src="../documents/template/js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="../documents/template/js/google-map.js"></script>
-  <script src="../documents/template/js/main.js"></script>
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="../../assets/js/vendor/jquery.min.js"><\/script>'
+        );
+    </script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>

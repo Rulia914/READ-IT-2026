@@ -4,16 +4,24 @@
 //URL : 
 //CTRL : commentsController
 //ACTION : store
-if(isset($_GET['comments']) && $_GET['comments'] == 'add'):
+if (isset($_GET['comments']) && $_GET['comments'] == 'add'):
     include_once '../app/controllers/commentsController.php';
     \App\Controllers\CommentsController\storeAction($connexion);
+
+// ROUTES USERS
+// PATTERN: /users/...
+// URL: ?users=...
+// ROUTER users
+elseif (isset($_GET['users'])):
+    include_once '../app/routers/users.php';
+
 
 //PAGE CONTACT
 //PATTERN : ?contact
 //URL : 
 //CTRL : 
 //ACTION : 
-elseif(isset($_GET['contact']) ):
+elseif (isset($_GET['contact'])):
     $title = "Contact";
     ob_start();
     include_once '../app/views/templates/partials/_contact.php';
@@ -25,7 +33,7 @@ elseif(isset($_GET['contact']) ):
 //URL : ?posts=show&id=x
 //CTRL : postsController
 //ACTION : showAction
-elseif(isset($_GET['posts']) ):
+elseif (isset($_GET['posts'])):
     include_once '../app/routers/posts.php';
 
 //Route par défaut : les dix derniers posts
@@ -34,7 +42,7 @@ elseif(isset($_GET['posts']) ):
 //CTRL : postsController
 //ACTION : indexAction
 else:
-include_once '../app/controllers/postsController.php';
-\App\Controllers\PostsController\indexAction($connexion);
+    include_once '../app/controllers/postsController.php';
+    \App\Controllers\PostsController\indexAction($connexion);
 
 endif;

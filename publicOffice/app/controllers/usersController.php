@@ -20,9 +20,12 @@ function loginAction(PDO $connexion, array $userData)
     $user = UsersModel\findOneByLogindAndPwd($connexion, $userData);
     //si pas, on redirige vers le loginform
     if(!$user) :
-         header('Location: ' . PUBLIC_BASE_URL . 'users/login-form');
+        if (isset($_SESSION["user"])) unset($_SESSION["user"]);
+        header('Location: ' . PUBLIC_BASE_URL . 'users/login-form');
      //sinon on redirige vers le dashboard
     else :
-     header('location:'. ADMIN_BASE_URL);
+        //je donne un badge
+        $_SESSION["user"] = $user;
+        header('location:'. ADMIN_BASE_URL);
     endif;
 }

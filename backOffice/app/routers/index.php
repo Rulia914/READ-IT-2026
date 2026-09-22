@@ -1,9 +1,17 @@
 <?php
+//ROUTE CATEGORIES.INDEX
+//PATTERN: categories/
+//URL: ?categories=xxx
+//CTRL : categoriesController
+//Action: index
+if(isset($_GET['categories'])):
+    include_once '../app/routers/categories.php';
+
+
 //ROUTE USERS
 //URL: ?users=xxx
 //ROUTER: users
-
-if(isset($_GET['users'])):
+elseif(isset($_GET['users'])):
     include_once '../app/routers/users.php';
     
 //ROUTE PAR DEFAUT

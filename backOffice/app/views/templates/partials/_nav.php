@@ -47,6 +47,7 @@
                 <li><a href="#">Ajouter un utilisateur</a></li>
               </ul>
             </li>
+            <li class="active"><a href="users/logout">Log out</a></li>
           </ul>
         </div>
         <!--/.nav-collapse -->

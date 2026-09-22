@@ -16,9 +16,10 @@ function loginFormAction(PDO $connexion)
 }
 
 function loginAction(PDO $connexion, array $userData)
-{   //On va chercher le user qui correspond
+{        //On va chercher le user qui correspond
     $user = UsersModel\findOneByLogindAndPwd($connexion, $userData);
-    //si pas, on redirige vers le loginform
+    
+         //si pas, on redirige vers le loginform
     if(!$user) :
         if (isset($_SESSION["user"])) unset($_SESSION["user"]);
         header('Location: ' . PUBLIC_BASE_URL . 'users/login-form');
